@@ -25,7 +25,7 @@
     }
   },
   "scripts": {
-    "build": "rollup -c && tsc --emitDeclarationOnly",
+    "build": "rollup -c && tsc --emitDeclarationOnly && cp skills.md project.md dist/",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test test/*.test.ts",
     "release": "npm run build && git tag v$npm_package_version"
