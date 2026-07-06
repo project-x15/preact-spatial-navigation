@@ -1,4 +1,9 @@
-# @x15/spatial — Skills
+---
+name: x15-spatial
+description: Spatial navigation (arrow-key focus) for Preact apps on 2015-era smart TVs (Tizen 2.4, webOS 1.x-2.x). Provides createSpatialEngine(), useFocusable hook, FocusableProvider, and FocusableRegion. Built on Norigin Spatial Navigation engine. Bundled for Chromium 34/38 with ES5 output. Use when building TV apps with arrow-key navigation, focus management, or spatial navigation in Preact. Triggers: spatial navigation, TV focus, arrow key navigation, smart TV app, Tizen, webOS, Chromium 34, focus management, Preact focus.
+metadata:
+  tags: spatial-navigation, smart-tv, tizen, webos, preact, focus-management, arrow-keys, chromimum-34, es5, tv-app
+---
 
 ## Spatial navigation engine
 
