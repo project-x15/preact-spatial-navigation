@@ -1,4 +1,4 @@
-# preact-spatial-navigation — Project Overview
+# @project-x15/preact-spatial-navigation — Project Overview
 
 Arrow-key focus management for Preact apps running on 2015-era smart TV platforms. Targets Samsung Tizen 2.4 (Chromium 34) and LG webOS 1.x through 2.x (Chromium 38).
 
@@ -19,7 +19,7 @@ The Norigin Spatial Navigation engine (production-proven on Firefox OS, Tizen, a
 └──────────────┬──────────────────────┘
                │
 ┌──────────────▼──────────────────────┐
-│  preact-spatial-navigation           │
+│  @project-x15/preact-spatial-navigation           │
 │  ┌──────────┐  ┌────────────────┐  │
 │  │ engine.ts│  │ preact.ts      │  │
 │  │ (wrapper)│  │ (hooks/context) │  │
