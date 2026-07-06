@@ -1,0 +1,14 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "chrome": "34"
+      },
+      "modules": false,
+      "bugfixes": true
+    }],
+    ["@babel/preset-typescript", {
+      "onlyRemoveTypeImports": true
+    }]
+  ]
+}
