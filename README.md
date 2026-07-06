@@ -1,6 +1,8 @@
-# @x15/spatial
+# preact-spatial-navigation
 
-Arrow-key focus for Preact apps on 2015 smart TVs. Targets Tizen 2.4 and webOS 1.x through 2.x. It's built on the Norigin Spatial Navigation engine and bundled for Chromium 34 and 38. These browsers are old enough that they've never heard of CSS Grid.
+Arrow-key focus for Preact apps on 2015 smart TVs. Targets Tizen 2.4 and webOS 1.x through 2.x.
+
+It's built on the Norigin Spatial Navigation engine and bundled for Chromium 34 and 38. These browsers are old enough that they've never heard of CSS Grid.
 
 ## Install
 
@@ -155,7 +157,7 @@ The `ref` callback registers and unregisters the element with the engine. `focus
 
 #### `<FocusableRegion>`
 
-Nested context provider for hierarchical focus trees. Children inherit `parentKey`.
+Nested context provider for nested focus trees. Children inherit `parentKey`.
 
 ```tsx
 <FocusableRegion focusKey="sidebar">
@@ -173,9 +175,11 @@ Nested context provider for hierarchical focus trees. Children inherit `parentKe
 | IE11 | Trident | ⚠️ (see below) |
 | Modern browsers | Chrome, Firefox, Safari | ✅ |
 
-The built bundle targets Chromium 34 via Babel `preset-env`. Output uses only ES5 features: `var`, function expressions, no `Symbol`, `Map`, `Set`, `Proxy`, `async`, or generators in user code.
+The built bundle targets Chromium 34 via Babel `preset-env`. Output is ES5: `var`, function expressions, no `Symbol`, `Map`, `Set`, `Proxy`, `async`, or generators.
 
-**IE11 note:** Norigin references `Symbol` internally with `typeof` guards. IE11 lacks `Symbol`. The guards prevent crashes, but focus-tracking edge cases may differ. Test on real IE11 via BrowserStack if you need IE11 support.
+**IE11 note:** Norigin references `Symbol` internally with `typeof` guards. IE11 lacks `Symbol`.
+
+The guards prevent crashes, but focus-tracking edge cases may differ. Test on real IE11 via BrowserStack if you need IE11 support.
 
 ## CSS constraints (2015 TV)
 
