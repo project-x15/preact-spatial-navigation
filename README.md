@@ -4,6 +4,8 @@ Arrow-key focus for Preact apps on 2015 smart TVs. Targets Tizen 2.4 and webOS 1
 
 It's built on the Norigin Spatial Navigation engine and bundled for Chromium 34 and 38. These browsers are old enough that they've never heard of CSS Grid.
 
+> **Alpha.** The API might change. Test on real hardware before shipping.
+
 ## Install
 
 ```sh
