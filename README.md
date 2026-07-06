@@ -5,9 +5,9 @@ Arrow-key focus for Preact apps on 2015 smart TVs. Targets Tizen 2.4 and webOS 1
 ## Install
 
 ```sh
-npm install @x15/spatial preact
+npm install project-x15/preact-spatial-navigation preact
 # or
-pnpm add @x15/spatial preact
+pnpm add project-x15/preact-spatial-navigation preact
 ```
 
 `preact` is a peer dependency. You bring your own.
