@@ -15,7 +15,7 @@ export default {
     {
       file: 'dist/spatial.umd.js',
       format: 'umd',
-      name: 'X15Spatial',
+      name: 'PreactSpatialNavigation',
       sourcemap: true,
     },
   ],

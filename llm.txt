@@ -1,4 +1,4 @@
-# @x15/spatial
+# preact-spatial-navigation
 
 Spatial navigation (arrow-key focus) for Preact apps on 2015-era smart TVs.
 Targets Samsung Tizen 2.4 (Chromium 34) and LG webOS 1.x-2.x (Chromium 38).
