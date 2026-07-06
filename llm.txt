@@ -1,0 +1,73 @@
+# @x15/spatial
+
+Spatial navigation (arrow-key focus) for Preact apps on 2015-era smart TVs.
+Targets Samsung Tizen 2.4 (Chromium 34) and LG webOS 1.x-2.x (Chromium 38).
+
+## Architecture
+
+Thin wrapper around @noriginmedia/norigin-spatial-navigation-core.
+Three layers: engine wrapper → Preact bindings → consumer app.
+
+```
+src/
+  types.ts    — Direction, FocusableOpts, SpatialEngine interface
+  engine.ts   — createSpatialEngine() factory, delegates to Norigin
+  preact.ts   — useFocusable hook, FocusableProvider, FocusableRegion
+  index.ts    — re-exports
+test/
+  engine.test.ts   — engine API tests (node:test + jsdom)
+  preact.test.ts   — Preact binding tests (node:test + jsdom + preact)
+```
+
+## Key constraints (2015 TV browsers)
+
+- Flexbox only. No CSS Grid, no gap, no custom properties, no sticky, no backdrop-filter.
+- ES5 output. No async/await, generators, Proxy, Map, Set, Symbol, or import() in user code.
+- Babel preset-env targets Chrome 34.
+- Single bundle, no code splitting.
+
+## Build pipeline
+
+TypeScript → Babel (strip types + downlevel to ES5) → Rollup (bundle) → dist/
+                                                         tsc (declarations only)
+
+Output: dist/spatial.js (ESM), dist/spatial.umd.js (UMD), *.d.ts
+
+## Commands
+
+pnpm install     — install deps
+pnpm test        — node --import tsx --test test/*.test.ts
+pnpm build       — rollup -c && tsc --emitDeclarationOnly
+pnpm typecheck   — tsc --noEmit
+pnpm release     — build + git tag v$version
+
+## Dependencies
+
+- @noriginmedia/norigin-spatial-navigation-core (spatial algorithm, key handling)
+- preact (peer dependency, not bundled)
+
+## Coding standards
+
+See AGENTS.md for full rules. Key principles:
+- One file, one responsibility. One function, one job.
+- No deep abstraction layers. No enterprise naming.
+- Early returns over nested conditionals.
+- Comments explain why, not what.
+- Test behavior, not implementation.
+- Prefer deletion over addition.
+
+## Release process
+
+1. Bump version in package.json
+2. pnpm release (builds + creates git tag)
+3. git push --tags
+4. GitHub Actions runs tests, builds, creates GitHub Release with dist/*
+
+## API surface
+
+createSpatialEngine() → { init, destroy, setKeyMap, addFocusable, updateFocusable, removeFocusable, setFocus, navigateByDirection, getCurrentFocusKey }
+
+useFocusable({ focusKey, parentKey?, engine?, onFocus?, onBlur?, onEnter?, onArrow? }) → { ref, focused, focusKey }
+
+<FocusableProvider engine={engine}> — context provider
+<FocusableRegion focusKey="..."> — nested context for focus trees
