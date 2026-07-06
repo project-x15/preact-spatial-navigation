@@ -24,7 +24,7 @@ import {
   createSpatialEngine,
   FocusableProvider,
   useFocusable,
-} from '@x15/spatial'
+} from 'preact-spatial-navigation'
 
 const engine = createSpatialEngine()
 engine.init()
@@ -228,7 +228,7 @@ TypeScript source → Babel (strip types + downlevel) → Rollup (bundle) → di
 
 Norigin Spatial Navigation does the heavy lifting. This package adds Preact bindings: `useFocusable`, `FocusableProvider`, and `FocusableRegion` for nested trees. It also wraps Norigin's API so your code won't break when they bump a major version.
 
-The build pipeline targets Chromium 34 with a single file. No code splitting, no surprises on decade-old browsers. You can tree-shake it too: import `@x15/spatial/engine` for vanilla JS or `@x15/spatial/preact` for Preact.
+The build pipeline targets Chromium 34 with a single file. No code splitting, no surprises on decade-old browsers. You can tree-shake it too: import `preact-spatial-navigation/engine` for vanilla JS or `preact-spatial-navigation/preact` for Preact.
 
 ## License
 

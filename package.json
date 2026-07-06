@@ -1,5 +1,5 @@
 {
-  "name": "@x15/spatial",
+  "name": "preact-spatial-navigation",
   "version": "0.1.0",
   "private": true,
   "type": "module",
